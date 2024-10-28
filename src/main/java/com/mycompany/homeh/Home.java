@@ -15,7 +15,8 @@ public class Home extends javax.swing.JFrame {
      */
     public Home(String usuario) {
         initComponents();
-        jLabel1.setText("Bem-vindo, " + usuario); // Define a mensagem de boas-vindas
+        jLabel1.setText("Bem-vindo, " + usuario); // Define a mensagem de boas-vindas]
+        setLocationRelativeTo(null);
     }   
 
     /**

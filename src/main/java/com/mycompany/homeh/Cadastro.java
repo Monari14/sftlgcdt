@@ -171,7 +171,18 @@ public class Cadastro extends javax.swing.JFrame {
             return;
         }
 
-        cadastrar(usuario, nome, email, senha);
+        if (!email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+            JOptionPane.showMessageDialog(this, "Email inválido, digite um email válido!");
+            return;
+        }
+
+        // Verificação de tamanho mínimo da senha
+        if (senha.length() < 6) {
+            JOptionPane.showMessageDialog(this, "Senha deve ter pelo menos 6 caracteres!");
+            return;
+        }
+
+        cadastrar(this, usuario, nome, email, senha);
     }//GEN-LAST:event_jBtCadastrarActionPerformed
 
     private void jMIloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIloginActionPerformed
@@ -209,9 +220,10 @@ public class Cadastro extends javax.swing.JFrame {
         return existe;
     }
 
-    private static void cadastrar(String usuario, String nome, String email, String senha) {
+    private static void cadastrar(JFrame frame, String usuario, String nome, String email, String senha) {
         if (inserirUsuario(usuario, nome, email, senha)) {
             JOptionPane.showMessageDialog(null, "Usuário bagulhado!");
+            frame.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Não bagulho o usuário.");
         }

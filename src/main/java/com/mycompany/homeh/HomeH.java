@@ -26,6 +26,7 @@ public class HomeH extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Liga o XAMPP!");
             System.exit(0);
         }
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -84,14 +85,12 @@ public class HomeH extends javax.swing.JFrame {
         JFrame j = new Login();
         j.setVisible(true);
         j.setLocationRelativeTo(null);
-        dispose();
     }//GEN-LAST:event_jMIloginActionPerformed
 
     private void jMIcadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIcadastroActionPerformed
         JFrame j = new Cadastro();
         j.setVisible(true);
         j.setLocationRelativeTo(null);
-        dispose();
     }//GEN-LAST:event_jMIcadastroActionPerformed
 
     /**
